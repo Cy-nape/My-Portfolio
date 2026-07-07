@@ -1,32 +1,33 @@
-# React + TypeScript + Vite
+# Sahil Kulhar
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Full-Stack & Security Engineer specializing in secure, event-driven SaaS platforms and DevSecOps tooling.
 
-Currently, two official plugins are available:
+Pursuing B.Tech in Cybersecurity & Digital Forensics at Vellore Institute of Technology.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Technical Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Languages:** Python, C++, Java, TypeScript, JavaScript
+- **Web Development:** Next.js, React, Node.js, Express, FastAPI, HTML/CSS
+- **Databases & ORMs:** PostgreSQL, MongoDB, Prisma ORM
+- **Tools & Platforms:** Git, Docker, AWS, Stripe, Linux
+- **Security & ML:** PyTorch, NumPy, Cryptography, OAuth2
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 🚀 Featured Projects
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+- **Fuzzie:** A Zapier-like workflow automation platform with a visual node editor, event webhooks, Stripe integration, and OAuth2.
+- **Zenith:** An AI-powered DevSecOps secret scanner and CVE dependency auditing CLI with a real-time VS Code extension.
+- **Image Steganography:** Huffman-compressed cryptographic data concealment tool using spread spectrum and LSB embedding.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 📬 Contact & Profiles
+
+- **GitHub:** [github.com/Cy-nape](https://github.com/Cy-nape)
+- **LinkedIn:** [linkedin.com/in/sahil-kulhar](https://www.linkedin.com/in/sahil-kulhar)
+- **LeetCode:** [leetcode.com/u/SzyUJYcPtU/](https://leetcode.com/u/SzyUJYcPtU/)
+- **Codeforces:** [codeforces.com/profile/Cy-nape](https://codeforces.com/profile/Cy-nape)
+- **Email:** [sahilkulhar01@gmail.com](mailto:sahilkulhar01@gmail.com)
