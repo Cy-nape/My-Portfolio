@@ -38,15 +38,15 @@ const projects: Project[] = [
     title: 'Image Steganography Tool',
     description: 'A multi-stage cryptography and data concealment tool that compresses messages using a custom Huffman coding implementation, secures the binary payload using spread spectrum techniques to resemble random noise, and embeds it into image Least Significant Bits (LSB).',
     tags: ['Python', 'NumPy', 'Pillow', 'Cryptography', 'Huffman Coding'],
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800&h=450',
-    links: { github: 'https://github.com/Cy-nape' }
+    image: '/imagestegnography.png',
+    links: { github: 'https://github.com/Cy-nape/Image-Steganography', live: 'https://image-steganography-tawny.vercel.app/' }
   }
 ];
 
 export default function Projects() {
   return (
     <section className="py-24 px-6 max-w-6xl mx-auto">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -89,9 +89,9 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
           className="w-full rounded-2xl overflow-hidden glass p-2 group cursor-pointer"
         >
           <div className="relative overflow-hidden rounded-xl bg-zinc-900 aspect-video">
-            <img 
-              src={project.image} 
-              alt={project.title} 
+            <img
+              src={project.image}
+              alt={project.title}
               className="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-500" />
@@ -104,7 +104,7 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
         <p className="text-zinc-400 text-lg leading-relaxed mb-6">
           {project.description}
         </p>
-        
+
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tags.map(tag => (
             <span key={tag} className="px-3 py-1 text-sm font-medium text-zinc-300 bg-white/10 rounded-full border border-white/5">
