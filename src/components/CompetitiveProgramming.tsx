@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 // --- CONFIGURATION ---
 // Swap in your actual usernames here!
 const PROFILES = {
-  leetcode: 'SzyUJYcPtU',
+  leetcode: 'Sahil_kulhar',
   codeforces: 'Cy-nape',
   github: 'Cy-nape' // Your GitHub username
 };

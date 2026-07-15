@@ -23,7 +23,7 @@ export default function Hero() {
         className="max-w-4xl w-full"
       >
         <motion.p variants={itemVariants} className="text-zinc-400 font-medium tracking-wider uppercase mb-4 text-sm md:text-base">
-          Full-Stack & Security Engineer
+          Security & Software Engineer
         </motion.p>
         
         <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
@@ -31,11 +31,11 @@ export default function Hero() {
         </motion.h1>
         
         <motion.h2 variants={itemVariants} className="text-2xl md:text-4xl text-zinc-300 font-medium mb-8 leading-relaxed max-w-3xl">
-          Building secure, scalable systems through elegant architecture and DevSecOps.
+          Engineering secure systems, AI-powered tools, and automated workflows.
         </motion.h2>
 
         <motion.p variants={itemVariants} className="text-zinc-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-          Pursuing my B.Tech in Cybersecurity & Digital Forensics at VIT. I specialize in engineering complex, event-driven SaaS platforms and custom machine learning-powered security tooling.
+          Pursuing my B.Tech in Cybersecurity & Digital Forensics at VIT. I specialize in building secure full-stack applications, cryptography tools, and integrating machine learning into DevSecOps workflows.
         </motion.p>
       </motion.div>
     </section>

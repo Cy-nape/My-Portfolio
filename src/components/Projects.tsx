@@ -21,25 +21,18 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Fuzzie: Visual Workflow Automation',
-    description: 'A Zapier-like workflow automation platform featuring a drag-and-drop visual node editor, event-driven webhook architecture, and secure OAuth2 system enabling real-time data synchronization and automated triggers across Google Drive, Slack, Notion, and Discord.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Stripe', 'OAuth2', 'Clerk'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=450',
-    links: { github: 'https://github.com/Cy-nape', live: '#' }
+    title: 'Zenith (AI-Powered Security Scanner)',
+    description: 'Engineered an AI-powered security scanner and VS Code extension for real-time secret detection and dependency vulnerability analysis. Integrated the Microsoft Phi-3 (3.8B) model with ONNX Runtime, reducing regex-based false positives by 37.5%. Implemented a scanning engine leveraging the OSV API to detect vulnerabilities from a database of 50,000+ CVEs.',
+    tags: ['Python', 'FastAPI', 'PyTorch', 'ONNX Runtime', 'TypeScript', 'VS Code API'],
+    image: '/image.png',
+    links: { github: 'https://github.com/Cy-nape/ZENITH-V2.0.git', live: 'https://github.com/Cy-nape/ZENITH-V2.0/releases/tag/v0.1.0' }
   },
   {
-    title: 'Zenith: AI-Powered Security Scanner',
-    description: 'A cross-platform DevSecOps CLI leveraging local machine learning models for real-time secret detection and CVE dependency auditing, featuring a real-time VS Code extension and automated Git pre-commit hooks to block vulnerabilities before deployment.',
-    tags: ['Python', 'PyTorch', 'TypeScript', 'FastAPI', 'DevSecOps', 'Git'],
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800&h=450',
-    links: { github: 'https://github.com/Cy-nape' }
-  },
-  {
-    title: 'Image Steganography Tool',
-    description: 'A multi-stage cryptography and data concealment tool that compresses messages using a custom Huffman coding implementation, secures the binary payload using spread spectrum techniques to resemble random noise, and embeds it into image Least Significant Bits (LSB).',
-    tags: ['Python', 'NumPy', 'Pillow', 'Cryptography', 'Huffman Coding'],
+    title: 'Image Steganography Web App',
+    description: 'Built a secure web application using LSB Steganography, Huffman Coding, and Spread Spectrum to conceal encrypted text inside images. Achieved an average 56% compression and optimized processing with <25 ms encoding and <5 ms decoding for images up to 4 MB.',
+    tags: ['Python', 'Flask', 'NumPy', 'Pillow', 'HTML/CSS', 'JavaScript'],
     image: '/imagestegnography.png',
-    links: { github: 'https://github.com/Cy-nape/Image-Steganography', live: 'https://image-steganography-tawny.vercel.app/' }
+    links: { github: 'https://github.com/Cy-nape/Image-Steganography.git', live: 'https://image-steganography-tawny.vercel.app/' }
   }
 ];
 
