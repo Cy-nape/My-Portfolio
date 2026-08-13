@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 
 const activities = [
   {
@@ -28,20 +28,20 @@ const activities = [
   },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: { staggerChildren: 0.15, delayChildren: 0.1 },
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: 'spring', stiffness: 120, damping: 18 },
+    transition: { type: 'spring' as const, stiffness: 120, damping: 18 },
   },
 };
 
