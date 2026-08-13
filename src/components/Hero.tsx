@@ -23,7 +23,7 @@ export default function Hero() {
         className="max-w-4xl w-full"
       >
         <motion.p variants={itemVariants} className="text-zinc-400 font-medium tracking-wider uppercase mb-4 text-sm md:text-base">
-          Security & Software Engineer
+          Software Engineer · Data Analytics · Security
         </motion.p>
         
         <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
@@ -31,11 +31,11 @@ export default function Hero() {
         </motion.h1>
         
         <motion.h2 variants={itemVariants} className="text-2xl md:text-4xl text-zinc-300 font-medium mb-8 leading-relaxed max-w-3xl">
-          Engineering secure systems, AI-powered tools, and automated workflows.
+          Building secure systems, analytics pipelines, and AI-powered tools.
         </motion.h2>
 
         <motion.p variants={itemVariants} className="text-zinc-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-          Pursuing my B.Tech in Cybersecurity & Digital Forensics at VIT. I specialize in building secure full-stack applications, cryptography tools, and integrating machine learning into DevSecOps workflows.
+          B.Tech in Computer Science & Engineering at VIT (CGPA 9.05). I build with Python, Flask, FastAPI, PostgreSQL, and Docker — from steganography web apps and AI security scanners to agricultural data warehouses. Off-screen, I compete in kabaddi and weightlifting.
         </motion.p>
       </motion.div>
     </section>

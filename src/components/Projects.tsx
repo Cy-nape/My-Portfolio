@@ -21,18 +21,32 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Image Steganography Web App',
+    description: 'Built a steganography pipeline that hides messages in images using LSB embedding and Huffman compression, with an optional AES-256-GCM encryption layer for secure mode. Secured a Flask REST API with JWT and API key authentication, bcrypt password hashing, and rate-limited login. Fixed a server-side storage leak and added upload validation; verified the app with 9 automated tests. Used Antigravity to build features and Claude to independently audit and debug the code.',
+    tags: ['Python', 'Flask', 'SQLAlchemy', 'SQLite', 'Cryptography', 'HTML/CSS/JS'],
+    image: '/imagestegnography.png',
+    links: { github: 'https://github.com/Cy-nape/Image-Steganography.git', live: 'https://image-steganography-tawny.vercel.app/' }
+  },
+  {
     title: 'Zenith (AI-Powered Security Scanner)',
-    description: 'Engineered an AI-powered security scanner and VS Code extension for real-time secret detection and dependency vulnerability analysis. Integrated the Microsoft Phi-3 (3.8B) model with ONNX Runtime, reducing regex-based false positives by 37.5%. Implemented a scanning engine leveraging the OSV API to detect vulnerabilities from a database of 50,000+ CVEs.',
-    tags: ['Python', 'FastAPI', 'PyTorch', 'ONNX Runtime', 'TypeScript', 'VS Code API'],
+    description: 'Engineered an AI-powered security scanner with a VS Code extension, CLI, and git pre-commit hook, backed by a FastAPI local service for real-time secret detection and dependency vulnerability analysis. Built a two-stage secret-detection pipeline using regex gating and context verification via Microsoft Phi-3-mini. Implemented a multi-ecosystem dependency vulnerability scanner using the OSV API with batched querying.',
+    tags: ['Python', 'FastAPI', 'Ollama (Phi-3)'],
     image: '/image.png',
     links: { github: 'https://github.com/Cy-nape/ZENITH-V2.0.git', live: 'https://github.com/Cy-nape/ZENITH-V2.0/releases/tag/v0.1.0' }
   },
   {
-    title: 'Image Steganography Web App',
-    description: 'Built a secure web application using LSB Steganography, Huffman Coding, and Spread Spectrum to conceal encrypted text inside images. Achieved an average 56% compression and optimized processing with <25 ms encoding and <5 ms decoding for images up to 4 MB.',
-    tags: ['Python', 'Flask', 'NumPy', 'Pillow', 'HTML/CSS', 'JavaScript'],
-    image: '/imagestegnography.png',
-    links: { github: 'https://github.com/Cy-nape/Image-Steganography.git', live: 'https://image-steganography-tawny.vercel.app/' }
+    title: 'Make it and crack it — Dockerized LaTeX Resume Builder',
+    description: 'Engineered a secure, Dockerized Node.js backend and sandboxed LaTeX compilation pipeline using Docker Compose, implementing multi-stage builds, non-root execution, and enforced timeouts to safely process untrusted input.',
+    tags: ['Docker', 'LaTeX', 'Node.js'],
+    image: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=800&q=80',
+    links: { github: '' }
+  },
+  {
+    title: 'MANDIBHAV: Agricultural Price Analytics Platform',
+    description: 'Engineered a Python pipeline with exponential backoff to ingest live data from a government REST API into a staged PostgreSQL Star Schema warehouse. Authored advanced SQL Window Functions to compute 30-day rolling price volatility and track MSP gaps. Performed EDA and time-series forecasting, deploying an interactive Metabase dashboard via Docker.',
+    tags: ['Python', 'SQL', 'PostgreSQL', 'Metabase'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    links: { github: 'https://github.com/Cy-nape/MANDIBHAV.git' }
   }
 ];
 

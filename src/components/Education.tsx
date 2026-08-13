@@ -2,22 +2,22 @@ import { motion } from 'framer-motion';
 
 const education = [
   {
-    institution: 'Vellore Institute of Technology, Bhopal',
-    location: 'Bhopal, Madhya Pradesh',
-    degree: 'B.Tech in Cybersecurity and Digital Forensics',
+    institution: 'Vellore Institute of Technology',
+    location: '',
+    degree: 'B.Tech in Computer science and Engineering',
     duration: 'Sep 2023 - Present',
     score: 'CGPA: 9.05'
   },
   {
     institution: 'Maa Lodhi Devi Yaduvanshi Shiksha Niketan',
-    location: 'Sohali, Jhunjhunu, Rajasthan',
+    location: '',
     degree: 'Class XII',
     duration: 'Apr 2021 - July 2022',
     score: '96.4%'
   },
   {
     institution: 'Maa Lodhi Devi Yaduvanshi Shiksha Niketan',
-    location: 'Sohali, Jhunjhunu, Rajasthan',
+    location: '',
     degree: 'Class X',
     duration: 'Apr 2019 - July 2020',
     score: '92.8%'

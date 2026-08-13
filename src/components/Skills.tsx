@@ -2,10 +2,9 @@ import { motion } from 'framer-motion';
 
 const skills = [
   { category: 'Programming Languages', items: ['Python', 'C++', 'Java', 'JavaScript'] },
-  { category: 'Databases & ORMs', items: ['PostgreSQL', 'MongoDB', 'SQL'] },
-  { category: 'Web Frameworks & Libraries', items: ['React', 'FastAPI', 'HTML/CSS'] },
-  { category: 'Tools & Platforms', items: ['Git', 'Docker', 'AWS', 'Linux'] },
-  { category: 'Relevant Coursework', items: ['Data Structures and Algorithms', 'Database Management Systems', 'Operating Systems', 'Software Engineering', 'Probability and Statistics', 'Computer Networks'] }
+  { category: 'Databases & ORMs', items: ['PostgreSQL', 'SQL'] },
+  { category: 'Web Frameworks & Libraries', items: ['Flask', 'FastAPI', 'REST API', 'HTML/CSS', 'NumPy'] },
+  { category: 'Tools & Platforms', items: ['Git', 'Docker', 'Metabase', 'AWS'] }
 ];
 
 export default function Skills() {

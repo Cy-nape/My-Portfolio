@@ -6,19 +6,22 @@ const certificatesData = [
     image: "/certificate-1.png",
     course: "Blockchain and Cryptocurrency",
     issuer: "NPTEL, IIT Kharagpur",
-    highlights: "2025"
+    highlights: "2025",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7326278554411843584/"
   },
   {
     image: "/certificate-2.png", 
     course: "Cybersecurity Analyst",
     issuer: "IBM",
-    highlights: ""
+    highlights: "Professional Certificate",
+    link: "https://courses.vit.skillsnetwork.site/certificates/8cdf142b7c5a4e00b3367c7d7ac9c1d1/"
   },
   {
     image: "/certificate-3.png",
-    course: "Certified Solutions Architect - Associate",
+    course: "Certified Solutions Architect — Associate",
     issuer: "AWS",
-    highlights: ""
+    highlights: "SAA-C03",
+    link: "https://cp.certmetrics.com/amazon/en/public/verify/credential/d28f2f75ea4f4108a2a3d3998c25892c/"
   }
 ];
 
@@ -130,8 +133,13 @@ export default function Certifications() {
             >
               <h3 className="text-white font-bold text-xl md:text-2xl text-center">{activeData.course}</h3>
               <p className="text-zinc-300 text-sm md:text-base mt-1 text-center">{activeData.issuer}</p>
-              <div className="mt-2 px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-xs md:text-sm font-semibold">
-                {activeData.highlights}
+              <div className="flex items-center gap-3 mt-2">
+                <div className="px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-xs md:text-sm font-semibold">
+                  {activeData.highlights}
+                </div>
+                {activeData.link && (
+                  <span className="text-zinc-400 text-xs font-mono">Click card to verify →</span>
+                )}
               </div>
             </motion.div>
           )}
@@ -150,13 +158,14 @@ export default function Certifications() {
             return (
               <motion.div
                 key={cert.image}
-                className="absolute w-32 sm:w-48 md:w-56 lg:w-64 aspect-[4/3] rounded-xl overflow-hidden shadow-2xl border border-white/10 glass"
+                className="absolute w-32 sm:w-48 md:w-56 lg:w-64 aspect-[4/3] rounded-xl overflow-hidden shadow-2xl border border-white/10 glass cursor-pointer"
                 style={{ transformOrigin: "center center" }}
                 custom={{ i, xOffset, yOffset, isHovered, isDimmed, isFanningOut: isFannedOut && hoveredIndex === null }}
                 variants={cardVariants}
                 initial="idle"
                 animate={isFannedOut ? "grid" : "idle"}
                 onMouseEnter={() => setHoveredIndex(i)}
+                onClick={() => cert.link && window.open(cert.link, '_blank', 'noopener noreferrer')}
               >
                 <img 
                   src={cert.image} 
