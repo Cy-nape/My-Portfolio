@@ -20,6 +20,13 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Image Steganography Web App',
+    description: 'Built a steganography pipeline that hides messages in images using LSB embedding and Huffman compression, with an optional AES-256-GCM encryption layer for secure mode. Secured a Flask REST API with JWT and API key authentication, bcrypt password hashing, and rate-limited login. Fixed a server-side storage leak and added upload validation; verified the app with 9 automated tests.',
+    tags: ['Python', 'Flask', 'SQLAlchemy', 'SQLite', 'Cryptography', 'HTML/CSS/JS'],
+    image: '/imagestegnography.png',
+    links: { github: 'https://github.com/Cy-nape/Image-Steganography.git', live: 'https://image-steganography-tawny.vercel.app/' }
+  },
+  {
     title: 'MANDIBHAV: Agricultural Price Analytics Platform',
     description: 'Built a Python data pipeline that collects live government data from a REST API and loads it into a PostgreSQL star schema with Fact and Dimension tables, using retry handling. Used SQL Window Functions (LAG, RANK, STDDEV) to calculate volatility and analyze MSP gaps. Cleaned data using Pandas and deployed an interactive Metabase dashboard via Docker.',
     tags: ['Python', 'SQL', 'PostgreSQL', 'Pandas', 'Metabase'],
