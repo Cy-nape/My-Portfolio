@@ -35,7 +35,7 @@ export default function Hero() {
         </motion.h2>
 
         <motion.p variants={itemVariants} className="text-zinc-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-          B.Tech in Computer Science & Engineering at VIT (CGPA 9.05). I build with Python, Flask, FastAPI, PostgreSQL, and Docker — from steganography web apps and AI security scanners to agricultural data warehouses. Off-screen, I compete in kabaddi and weightlifting.
+          Computer Science undergraduate with strong foundations in DSA, C++, Python, and SQL, and hands-on experience building backend applications and data pipelines.
         </motion.p>
       </motion.div>
     </section>

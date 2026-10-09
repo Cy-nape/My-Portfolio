@@ -10,17 +10,17 @@ import Certifications from './components/Certifications';
 
 function App() {
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-screen">
       <Navbar />
       <main>
         <Hero />
         <Experience />
-        <ExtraCurricular />
         <Projects />
         <Skills />
         <Education />
         <CompetitiveProgramming />
         <Certifications />
+        <ExtraCurricular />
       </main>
       <footer className="py-8 text-center text-zinc-500 text-sm">
         <p>© {new Date().getFullYear()} Sahil Kulhar. Built with React & Framer Motion.</p>

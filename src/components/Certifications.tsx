@@ -33,7 +33,6 @@ const getRandomRotation = (index: number) => {
 const cardVariants: Variants = {
   idle: (custom: any) => ({
     x: "0%",
-    // Create a continuous, independent floating motion array for each card
     y: ["0%", `${custom.i % 2 === 0 ? -5 : 5}%`, "0%", `${custom.i % 2 === 0 ? 5 : -5}%`, "0%"],
     rotate: [
       getRandomRotation(custom.i), 
@@ -56,7 +55,7 @@ const cardVariants: Variants = {
     x: custom.isHovered ? "0%" : `${custom.xOffset}%`,
     y: custom.isHovered ? "-5%" : `${custom.yOffset}%`,
     rotate: 0,
-    scale: custom.isHovered ? 4.5 : (custom.isDimmed ? 0.9 : 1),
+    scale: custom.isHovered ? 2.5 : (custom.isDimmed ? 0.9 : 1),
     opacity: 1,
     filter: custom.isDimmed ? "blur(6px) brightness(0.4)" : "blur(0px) brightness(1)",
     zIndex: custom.isHovered ? 50 : 10,
@@ -88,18 +87,21 @@ export default function Certifications() {
       >
         <h2 className="text-3xl font-bold text-white mb-4">Certifications</h2>
         <p className="text-zinc-400 max-w-2xl text-lg mx-auto">
-          Hover over the anti-gravity stack to view my professional credentials and completed courses.
+          Click the anti-gravity stack to view my professional credentials in a grid format.
         </p>
       </motion.div>
 
       <div 
-        className="relative w-full h-[600px] flex items-center justify-center cursor-crosshair"
-        onMouseEnter={() => setIsFannedOut(true)}
-        onMouseLeave={() => { setIsFannedOut(false); setHoveredIndex(null); }}
+        className="relative w-full h-[600px] flex items-center justify-center cursor-pointer"
+        onClick={() => {
+          setIsFannedOut(!isFannedOut);
+          if (isFannedOut) setHoveredIndex(null);
+        }}
+        onMouseLeave={() => { if (!isFannedOut) setHoveredIndex(null); }}
       >
         {/* Revolving Background Text Layer */}
         <AnimatePresence>
-          {hoveredIndex !== null && (
+          {hoveredIndex !== null && isFannedOut && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 0.15, scale: 1, rotate: 360 }}
@@ -122,9 +124,10 @@ export default function Certifications() {
             </motion.div>
           )}
         </AnimatePresence>
+        
         {/* Central Info Box */}
         <AnimatePresence>
-          {hoveredIndex !== null && activeData && (
+          {hoveredIndex !== null && activeData && isFannedOut && (
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -150,22 +153,28 @@ export default function Certifications() {
           {certificatesData.map((cert, i) => {
             const col = i % 4;
             const row = Math.floor(i / 4);
-            const xOffset = (col - 1.5) * 110; 
-            const yOffset = (row - 0.5) * 120;
+            const xOffset = (col - 1) * 120; // Adjusted for 3 items
+            const yOffset = (row - 0) * 120;
             const isHovered = hoveredIndex === i;
             const isDimmed = hoveredIndex !== null && hoveredIndex !== i;
 
             return (
               <motion.div
-                key={cert.image}
+                key={cert.course}
                 className="absolute w-32 sm:w-48 md:w-56 lg:w-64 aspect-[4/3] rounded-xl overflow-hidden shadow-2xl border border-white/10 glass cursor-pointer"
                 style={{ transformOrigin: "center center" }}
                 custom={{ i, xOffset, yOffset, isHovered, isDimmed, isFanningOut: isFannedOut && hoveredIndex === null }}
                 variants={cardVariants}
                 initial="idle"
                 animate={isFannedOut ? "grid" : "idle"}
-                onMouseEnter={() => setHoveredIndex(i)}
-                onClick={() => cert.link && window.open(cert.link, '_blank', 'noopener noreferrer')}
+                onMouseEnter={() => { if (isFannedOut) setHoveredIndex(i); }}
+                onMouseLeave={() => { if (isFannedOut) setHoveredIndex(null); }}
+                onClick={(e) => {
+                  if (isFannedOut && cert.link) {
+                    e.stopPropagation();
+                    window.open(cert.link, '_blank', 'noopener noreferrer');
+                  }
+                }}
               >
                 <img 
                   src={cert.image} 

@@ -1,7 +1,20 @@
 import { useRef } from 'react';
 import { motion, useInView, type Variants } from 'framer-motion';
 
-const activities = [
+type MediaType = 'image' | 'video';
+
+interface Activity {
+  emoji: string;
+  title: string;
+  detail: string;
+  color: string;
+  border: string;
+  glow: string;
+  mediaUrl?: string;
+  mediaType?: MediaType;
+}
+
+const activities: Activity[] = [
   {
     emoji: '🤼‍♂️',
     title: 'Kabaddi Tournament',
@@ -9,6 +22,7 @@ const activities = [
     color: 'from-emerald-500/20 to-teal-500/10',
     border: 'hover:border-emerald-500/40',
     glow: 'hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.3)]',
+    // Example: mediaUrl: '/kabaddi.jpg', mediaType: 'image'
   },
   {
     emoji: '🏋️',
@@ -17,6 +31,7 @@ const activities = [
     color: 'from-orange-500/20 to-amber-500/10',
     border: 'hover:border-orange-500/40',
     glow: 'hover:shadow-[0_0_30px_-5px_rgba(249,115,22,0.3)]',
+    // Example: mediaUrl: '/weightlifting.mp4', mediaType: 'video'
   },
   {
     emoji: '🎪',
@@ -76,26 +91,49 @@ export default function ExtraCurricular() {
             key={activity.title}
             variants={cardVariants}
             whileHover={{ y: -6, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
-            className={`relative group glass rounded-2xl p-6 border border-white/5 ${activity.border} ${activity.glow} transition-all duration-300 overflow-hidden cursor-default`}
+            className={`relative group glass rounded-2xl border border-white/5 ${activity.border} ${activity.glow} transition-all duration-300 overflow-hidden flex flex-col`}
           >
             {/* Gradient bg */}
             <div
               className={`absolute inset-0 bg-gradient-to-br ${activity.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
             />
 
-            {/* Animated rings on hover */}
-            <motion.div
-              className="absolute -top-8 -right-8 w-32 h-32 rounded-full border border-white/5 group-hover:border-white/15 transition-colors duration-500"
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 12, ease: 'linear' }}
-            />
-            <motion.div
-              className="absolute -top-4 -right-4 w-16 h-16 rounded-full border border-white/5 group-hover:border-white/10 transition-colors duration-500"
-              animate={{ rotate: -360 }}
-              transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
-            />
+            {activity.mediaUrl && (
+              <div className="w-full h-40 overflow-hidden relative z-10 border-b border-white/5">
+                {activity.mediaType === 'video' ? (
+                  <video
+                    src={activity.mediaUrl}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
+                ) : (
+                  <img
+                    src={activity.mediaUrl}
+                    alt={activity.title}
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-700"
+                  />
+                )}
+              </div>
+            )}
 
-            <div className="relative z-10">
+            <div className="relative z-10 p-6 flex-grow flex flex-col">
+              {!activity.mediaUrl && (
+                <>
+                  <motion.div
+                    className="absolute -top-8 -right-8 w-32 h-32 rounded-full border border-white/5 group-hover:border-white/15 transition-colors duration-500 pointer-events-none"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 12, ease: 'linear' }}
+                  />
+                  <motion.div
+                    className="absolute -top-4 -right-4 w-16 h-16 rounded-full border border-white/5 group-hover:border-white/10 transition-colors duration-500 pointer-events-none"
+                    animate={{ rotate: -360 }}
+                    transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
+                  />
+                </>
+              )}
               <motion.div
                 className="text-4xl mb-4 select-none"
                 whileHover={{ scale: 1.2, rotate: [0, -8, 8, 0] }}
@@ -104,7 +142,7 @@ export default function ExtraCurricular() {
                 {activity.emoji}
               </motion.div>
               <h3 className="text-xl font-bold text-white mb-2">{activity.title}</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">{activity.detail}</p>
+              <p className="text-zinc-400 text-sm leading-relaxed flex-grow">{activity.detail}</p>
             </div>
           </motion.div>
         ))}
